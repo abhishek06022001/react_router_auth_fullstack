@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from './GlobalContext';
-export const Public = ({ children }) => {
+export const Protected = ({ children }) => {
     const { isAuthenticated } = useAuth();
-    return isAuthenticated ? <Navigate to="/" /> : <>{children}</>;
+    return isAuthenticated ? <>{children}</> : <Navigate to="/" />;
 };
